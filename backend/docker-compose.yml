@@ -4,5 +4,6 @@ services:
     ports:
       - "443:443"
     volumes:
-      - ./tls:/server/tls:ro
+      - /etc/letsencrypt/live/api.wishy.aandrku.dev/fullchain.pem:/server/tls/certFile:ro
+      - /etc/letsencrypt/live/api.wishy.aandrku.dev/privkey.pem:/server/tls/keyFile:ro
     restart: always
