@@ -20,4 +20,4 @@ WORKDIR /server
 COPY --from=builder /server/server .
 
 # Run the binary
-CMD ["./server -tls -port=443"]
+CMD ["./server", "-tls", "-port=443"]
