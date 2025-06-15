@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -8,6 +9,10 @@ import (
 )
 
 func main() {
+	tls := flag.Bool("tls", false, "Usage: -tls")
+	port := flag.String("port", "3000", "Usage: -port=3000")
+	flag.Parse()
+
 	e := echo.New()
 
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
@@ -26,5 +31,11 @@ func main() {
 
 		return c.JSON(http.StatusOK, m)
 	})
-	e.Logger.Fatal(e.Start("0.0.0.0:3000"))
+
+	if *tls {
+		e.Logger.Fatal(e.StartTLS(":"+*port, "tls/certFile", "tls/keyFile"))
+	} else {
+		e.Logger.Fatal(e.Start(":" + *port))
+	}
+
 }
