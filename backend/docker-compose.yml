@@ -4,5 +4,5 @@ services:
     ports:
       - "443:443"
     volumes:
-      - ./tls:/app/tls:ro
+      - ./tls:/server/tls:ro
     restart: always
