@@ -4,12 +4,11 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
-    jobs:
-      deploy:
-        runs-on: ubuntu-latest
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -34,5 +33,3 @@ on:
           password: ${{ secrets.SERVER_USER_PASSWORD }}  
           source: "./backend/wishy-backend.tar"                         
           target: "/home/${{ secrets.SERVER_USER }}/server" 
-
-
