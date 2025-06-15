@@ -5,7 +5,6 @@ function App() {
         const req = fetch(`${serverAddr}`);
 
         const msg = req.then((res) => {
-            console.log(res.statusText);
             return res.json();
         });
 
