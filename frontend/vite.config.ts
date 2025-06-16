@@ -5,21 +5,21 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [react(), tailwindcss()],
-    server: {
-        proxy: {
-            '/api': {
-                target: 'http://localhost:3000',
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, ''),
-                secure: false,
-            },
-        },
+  plugins: [react(), tailwindcss()],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+        secure: false,
+      },
     },
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './src'),
-            '@pages': path.resolve(__dirname, './src/components/pages'),
-        },
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@pages': path.resolve(__dirname, './src/components/pages'),
     },
+  },
 });
