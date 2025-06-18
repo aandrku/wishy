@@ -18,7 +18,7 @@ export function LoginForm({
           <form>
             <div className="grid gap-6">
               <div className="flex flex-col gap-4">
-                <Button className="w-full bg-ui3 rounded-lg text-text">
+                <Button className="bg-ui3 text-text w-full rounded-lg">
                   <svg
                     className="size-4"
                     xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ export function LoginForm({
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-accent-solid text-accent-text rounded-lg hover:bg-accent-solid2"
+                  className="bg-accent-solid text-accent-text hover:bg-accent-solid2 w-full rounded-lg"
                 >
                   Login
                 </Button>

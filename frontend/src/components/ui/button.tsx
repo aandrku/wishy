@@ -11,7 +11,7 @@ export function Button({ className, children, ...props }: Props) {
     <button
       data-slot="button"
       className={cn(
-        'h-10 flex gap-2 flex-row items-center justify-center ',
+        'flex h-10 flex-row items-center justify-center gap-2',
         className
       )}
       {...props}

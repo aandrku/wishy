@@ -7,7 +7,7 @@ export default function SignupPage() {
       <div className="flex w-full max-w-sm flex-col gap-6">
         <a
           href="#"
-          className="flex text-accent-text items-center gap-2 self-center font-medium"
+          className="text-accent-text flex items-center gap-2 self-center font-medium"
         >
           <div className="bg-bg2 flex size-6 items-center justify-center rounded-md">
             <Gift className="stroke-accent-solid"></Gift>
